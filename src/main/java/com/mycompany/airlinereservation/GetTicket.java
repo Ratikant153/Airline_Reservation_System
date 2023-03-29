@@ -51,6 +51,8 @@ public class GetTicket extends javax.swing.JInternalFrame {
         arrival = new javax.swing.JLabel();
         departure = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        seats = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -89,7 +91,7 @@ public class GetTicket extends javax.swing.JInternalFrame {
         jLabel7.setText("First Name:");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("Date of Journey");
+        jLabel8.setText("Date of Journey :");
 
         firstname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         firstname.setText("First Name");
@@ -102,6 +104,11 @@ public class GetTicket extends javax.swing.JInternalFrame {
         departure.setText("Departure");
 
         date.setText("Date");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Reserved Seats :");
+
+        seats.setText("Seats");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,14 +129,17 @@ public class GetTicket extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(arrival)
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(date))
+                    .addComponent(arrival)
                     .addComponent(departure))
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(seats)
+                    .addComponent(date))
+                .addContainerGap(200, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(190, 190, 190)
                 .addComponent(jLabel3)
@@ -153,7 +163,9 @@ public class GetTicket extends javax.swing.JInternalFrame {
                     .addComponent(jLabel6)
                     .addComponent(lastname)
                     .addComponent(jLabel5)
-                    .addComponent(departure))
+                    .addComponent(departure)
+                    .addComponent(jLabel9)
+                    .addComponent(seats))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -220,7 +232,7 @@ public class GetTicket extends javax.swing.JInternalFrame {
             arrival.setText(rs.getString("arrival"));
             departure.setText(rs.getString("departure"));
             date.setText(rs.getString("date"));
-            
+            seats.setText(rs.getString("noOfSeats"));
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GetTicket.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -244,9 +256,11 @@ public class GetTicket extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lastname;
+    private javax.swing.JLabel seats;
     private javax.swing.JTextField ticket;
     // End of variables declaration//GEN-END:variables
 }

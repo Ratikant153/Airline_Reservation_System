@@ -72,6 +72,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         button1 = new java.awt.Button();
+        arrival = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Arrival = new javax.swing.JComboBox<>();
         Departure = new javax.swing.JComboBox<>();
@@ -84,7 +85,6 @@ public class BookTicket extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        ticketId = new javax.swing.JTextField();
         firstName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -94,7 +94,6 @@ public class BookTicket extends javax.swing.JInternalFrame {
         lastName = new javax.swing.JTextField();
         fare = new javax.swing.JTextField();
         contact = new javax.swing.JTextField();
-        date = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         numberOfTicket = new javax.swing.JTextField();
@@ -104,9 +103,12 @@ public class BookTicket extends javax.swing.JInternalFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        arrival = new javax.swing.JLabel();
+        ticketId = new javax.swing.JLabel();
+        date = new javax.swing.JTextField();
 
         button1.setLabel("button1");
+
+        arrival.setText("Arrival");
 
         setClosable(true);
 
@@ -119,6 +121,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("Search Your Flight");
 
+        departure.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         departure.setText("Departure");
 
         search.setBackground(new java.awt.Color(51, 102, 255));
@@ -130,6 +133,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Arrival");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -183,13 +187,13 @@ public class BookTicket extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "FlightID", "FlightName", "Arrival", "Departure", "Date", "Duration"
+                "FlightID", "FlightName", "Arrival", "Departure", "Date", "Duration", "Avl.Seats"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -200,7 +204,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Ticket ID");
+        jLabel4.setText("Ticket ID :");
 
         jLabel5.setText("Customer ID");
 
@@ -260,23 +264,27 @@ public class BookTicket extends javax.swing.JInternalFrame {
             }
         });
 
-        arrival.setText("Arrival");
+        ticketId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ticketId.setText("Ticket");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 409, Short.MAX_VALUE)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 20, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,45 +309,37 @@ public class BookTicket extends javax.swing.JInternalFrame {
                                             .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(fare, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(numberOfTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(CustID, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton1)))
+                                                .addComponent(jButton1))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(date, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(fare, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
                                         .addGap(16, 16, 16))))
                             .addComponent(jButton3)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(ticketId, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(146, 146, 146)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(arrival)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(ticketId, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
+                        .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(ticketId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
+                            .addComponent(ticketId, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(CustID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,14 +347,12 @@ public class BookTicket extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(arrival)))
+                            .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -364,11 +362,11 @@ public class BookTicket extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(fare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -418,10 +416,13 @@ public class BookTicket extends javax.swing.JInternalFrame {
                    v2.add(rs.getString("FlightName"));
                    v2.add(rs.getString("Arrival"));
                    v2.add(rs.getString("Departure"));
-                   v2.add(rs.getString("Date"));    
+                   v2.add(rs.getString("Date")); 
+                  
                  //  V2.add(rs.getString("Fare"));
                  //  V2.add(rs.getString("Seats"));
                    v2.add(rs.getString("Duration"));
+                   
+                    v2.add(rs.getString("Seats"));
                    
                    
                    
@@ -484,6 +485,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             firstName.setText(rs.getString("FirstName"));
             lastName.setText(rs.getString("LastName"));
             contact.setText(rs.getString("Contact"));
+            date.setText(rs.getString("Dob"));
             
             
             
@@ -511,6 +513,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
             String ticketID=ticketId.getText();
             String fName=firstName.getText();
             String lName=lastName.getText();
+            String bookedTicket=numberOfTicket.getText();
             
             String arrival=Arrival.getSelectedItem().toString();
             
@@ -521,14 +524,15 @@ public class BookTicket extends javax.swing.JInternalFrame {
             String FlightName=jTable1.getModel().getValueAt(row,col).toString();
             col=4;
             String date=jTable1.getModel().getValueAt(row,col).toString();
-            
-            
-            
+            String totalSeats=jTable1.getModel().getValueAt(row,6).toString();
+            String flightId=jTable1.getModel().getValueAt(row,0).toString();
+          
             
             
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost/reservationsystem","root","#Bibhu153");
-            pre=con.prepareStatement("insert ticket(ticketID, firstName, lastName, flightName, arrival, departure, date)values(?,?,?,?,?,?,?)");
+            pre=con.prepareStatement("insert into ticket(ticketID,firstName,lastName,flightName,arrival,departure,date,noOfSeat)values(?,?,?,?,?,?,?,?)");
+           
             pre.setString(1,ticketID);
             pre.setString(2,fName);
             pre.setString(3,lName);
@@ -536,8 +540,16 @@ public class BookTicket extends javax.swing.JInternalFrame {
             pre.setString(5,arrival);
             pre.setString(6,departure );
             pre.setString(7,date);
-            
+            pre.setString(8,bookedTicket);
             pre.executeUpdate();
+            // update the seats
+            int bookedSeats=Integer.valueOf(numberOfTicket.getText());
+            CalSeats(arrival,departure,bookedSeats,totalSeats,flightId);
+           
+          
+            
+            
+           // pre.executeUpdate();
             JOptionPane.showMessageDialog(null,"Ticket Booked Successfully !");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BookTicket.class.getName()).log(Level.SEVERE, null, ex);
@@ -573,11 +585,44 @@ public class BookTicket extends javax.swing.JInternalFrame {
             
     }//GEN-LAST:event_jTable1MouseClicked
 
+    public void CalSeats(String arrival,String departure,int seats ,String totalSeats,String flightId){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/reservationsystem","root","#Bibhu153");
+            pre=con.prepareStatement("Select * from flight where Arrival=? and Departure=?");
+            pre.setString(1,arrival);
+            pre.setString(2,departure);
+            
+              
+            String AvlSeats=String.valueOf(Integer.valueOf(totalSeats)-seats);
+            System.out.println(AvlSeats);
+            pre=con.prepareStatement("UPDATE flight SET Seats=? where FlightId=?");
+            pre.setString(1,AvlSeats);
+            pre.setString(2,flightId);
+            pre.executeUpdate();
+           
+           
+           
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(BookTicket.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookTicket.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         AutoId();
         CustID.setText("");
-        date.cleanup();
+       // date.cleanup();
         lastName.setText("");
         contact.setText("");
         fare.setText("");
@@ -596,7 +641,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
     private javax.swing.JLabel arrival;
     private java.awt.Button button1;
     private javax.swing.JTextField contact;
-    private com.toedter.calendar.JDateChooser date;
+    private javax.swing.JTextField date;
     private javax.swing.JLabel departure;
     private javax.swing.JTextField fare;
     private javax.swing.JTextField firstName;
@@ -622,7 +667,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
     private javax.swing.JTextField lastName;
     private javax.swing.JTextField numberOfTicket;
     private javax.swing.JButton search;
-    private javax.swing.JTextField ticketId;
+    private javax.swing.JLabel ticketId;
     private javax.swing.JTextField totalFare;
     // End of variables declaration//GEN-END:variables
 }
